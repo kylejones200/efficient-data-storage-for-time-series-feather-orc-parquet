@@ -4,19 +4,19 @@ When starting with data science, many people default to using CSV files for data
 
 # Why Not Use CSV?
 
-- **Slow Read/Write Speeds:** CSV files are slower to read and write compared to modern data storage formats.
+- Slow Read/Write Speeds: CSV files are slower to read and write compared to modern data storage formats.
 
-- **Lack of Compression:** CSV files are not optimized for compression, leading to unnecessarily large file sizes.
+- Lack of Compression: CSV files are not optimized for compression, leading to unnecessarily large file sizes.
 
-- **Limited Scalability:** CSV is unsuitable for large-scale data processing, especially in big data environments.
+- Limited Scalability: CSV is unsuitable for large-scale data processing, especially in big data environments.
 
 CSV and Excel struggle with large datasets, making them inefficient for time series analysis. As data science projects grow in complexity and size, switching to more advanced file storage options becomes necessary.
 
 # Feather: High-Speed Storage for Python and R
 
-**Description:** Feather is a lightweight, high-speed file format designed for interoperability between `pandas` (Python) and R. It is based on Apache Arrow, an in-memory columnar format optimized for fast data interchange.
+Description: Feather is a lightweight, high-speed file format designed for interoperability between `pandas` (Python) and R. It is based on Apache Arrow, an in-memory columnar format optimized for fast data interchange.
 
-**Key Features:**
+Key Features:
 
 - Fast read and write speeds due to its columnar structure.
 
@@ -24,19 +24,19 @@ CSV and Excel struggle with large datasets, making them inefficient for time ser
 
 - Ideal for in-memory analytics, making it perfect for exploratory data analysis and prototyping.
 
-**Limitations:**
+Limitations:
 
 - Not designed for big data projects requiring distributed computing (e.g., Spark or Hadoop).
 
 - Limited support outside the Python and R ecosystems.
 
-**Use Case:** In-memory analytics and prototyping in Python and R.
+Use Case: In-memory analytics and prototyping in Python and R.
 
 # ORC (Optimized Row Columnar): Designed for Big Data
 
-**Description:** Apache ORC (Optimized Row Columnar) was developed for Hadoop and big data environments. It is primarily used in systems like Apache Hive, Presto, and AWS Athena.
+Description: Apache ORC (Optimized Row Columnar) was developed for Hadoop and big data environments. It is primarily used in systems like Apache Hive, Presto, and AWS Athena.
 
-**Key Features:**
+Key Features:
 
 - Columnar storage format that reduces storage space.
 
@@ -44,19 +44,19 @@ CSV and Excel struggle with large datasets, making them inefficient for time ser
 
 - High compression rates, reducing storage costs in big data systems.
 
-**Limitations:**
+Limitations:
 
 - Limited support in the Python ecosystem, requiring additional dependencies (`pip install pyarrow`).
 
 - Primarily used in Hadoop and distributed data processing frameworks.
 
-**Use Case:** Large-scale data processing and storage in Hadoop ecosystems, including Apache Hive, Presto, and AWS Athena.
+Use Case: Large-scale data processing and storage in Hadoop ecosystems, including Apache Hive, Presto, and AWS Athena.
 
 # Parquet: The Best of Both Worlds for Analytics
 
-**Description:** Apache Parquet is a widely-used columnar format designed for high-performance analytics. It is natively supported in `pandas`, Spark, and AWS Athena.
+Description: Apache Parquet is a widely-used columnar format designed for high-performance analytics. It is natively supported in `pandas`, Spark, and AWS Athena.
 
-**Key Features:**
+Key Features:
 
 - Compressed columnar storage format, optimized for analytical queries.
 
@@ -64,19 +64,19 @@ CSV and Excel struggle with large datasets, making them inefficient for time ser
 
 - Efficient encoding and compression, reducing storage space and improving read speeds.
 
-**Advantages:**
+Advantages:
 
 - Best balance of efficiency and interoperability across various platforms.
 
 - Ideal for cloud workloads and distributed computing systems.
 
-**Limitations:**
+Limitations:
 
 - Can add bloat and overhead for simple datasets.
 
 - More complex to implement compared to CSV or Feather.
 
-**Use Case:** High-performance analytics, cloud storage, and big data systems requiring fast query performance and efficient storage.
+Use Case: High-performance analytics, cloud storage, and big data systems requiring fast query performance and efficient storage.
 
 # Performance Comparison: CSV vs. Feather vs. ORC vs. Parquet
 
@@ -111,33 +111,33 @@ results_df = pd.DataFrame(results) print(results_df)
 
 Format Size (MB) Load Time (s) 0 CSV 41.373181 0.395387 1 Parquet 18.819997 0.160249 2 Feather 33.856363 0.149243 3 ORC 33.806019 0.187391
 
-- **Parquet** provides the best balance between size and load time.
+- Parquet provides the best balance between size and load time.
 
-- **Feather** and **ORC** are also significantly faster than CSV.
+- Feather and ORC are also significantly faster than CSV.
 
 - All formats are approximately 2x faster than CSV and more storage-efficient.
 
 # Choosing the Right Format
 
-- **Feather**: Best for in-memory analytics in Python and R.
+- Feather: Best for in-memory analytics in Python and R.
 
-- **ORC**: Ideal for big data environments using Hadoop ecosystems.
+- ORC: Ideal for big data environments using Hadoop ecosystems.
 
-- **Parquet**: Optimal for cloud storage, distributed computing, and high-performance analytics.
+- Parquet: Optimal for cloud storage, distributed computing, and high-performance analytics.
 
 The choice of storage format significantly impacts the performance, scalability, and efficiency of time series analysis. As data science projects evolve, selecting the right format becomes crucial:
 
-- **Feather** is suitable for in-memory workflows and rapid prototyping.
+- Feather is suitable for in-memory workflows and rapid prototyping.
 
-- **ORC** excels in big data environments where storage efficiency and query performance are critical.
+- ORC excels in big data environments where storage efficiency and query performance are critical.
 
-- **Parquet** offers the best balance of efficiency, interoperability, and scalability, making it the go-to choice for cloud and big data analytics.
+- Parquet offers the best balance of efficiency, interoperability, and scalability, making it the go-to choice for cloud and big data analytics.
 
 You can optimize your data storage, improve performance, and reduce costs in time series analysis by using the right file format.
 
 ## Key Takeaways
 
-- **Slow Read/Write Speeds:** CSV files are slower to read and write compared to modern data storage formats.
-- **Lack of Compression:** CSV files are not optimized for compression, leading to unnecessarily large file sizes.
-- **Limited Scalability:** CSV is unsuitable for large-scale data processing, especially in big data environments.
+- Slow Read/Write Speeds: CSV files are slower to read and write compared to modern data storage formats.
+- Lack of Compression: CSV files are not optimized for compression, leading to unnecessarily large file sizes.
+- Limited Scalability: CSV is unsuitable for large-scale data processing, especially in big data environments.
 - Fast read and write speeds due to its columnar structure.
